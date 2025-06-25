@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Contact Extractor</title>
+
+    <!-- XLSX Library for Excel export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <!-- PDF.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+    <!-- Your Styles -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>📄 PDF Contact Extractor</h1>
+            <p>Upload PDFs to extract names, phone numbers, and email addresses</p>
+        </header>
+
+        <div class="upload-area" id="upload-area">
+            <h3>Drag & Drop PDF Files Here</h3>
+            <p>or</p>
+            <button class="upload-btn" id="upload-btn">Select PDF Files</button>
+            <input type="file" id="file-input" accept=".pdf" multiple />
+            <div class="progress-bar" id="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <p class="status" id="status">Ready to upload</p>
+            <p class="error" id="error"></p>
+            <ul id="file-names"></ul>
+        </div>
+
+        <div class="results">
+            <h2>Extracted Contacts</h2>
+            <div id="table-container">
+                <table id="results-table">
+                    <thead>
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-body"></tbody>
+                </table>
+            </div>
+            <button class="download-btn" id="download-btn" style="display: none;">Download as Excel</button>
+        </div>
+    </div>
+
+    <!-- Your JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
